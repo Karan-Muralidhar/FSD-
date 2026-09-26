@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiplication Table</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+        }
+
+        .box {
+            width: 400px;
+            margin: 50px auto;
+            padding: 30px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        input {
+            padding: 10px;
+            width: 200px;
+        }
+
+        button {
+            padding: 10px 25px;
+            margin-top: 15px;
+        }
+
+        #result {
+            font-size: 18px;
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        #result p {
+            margin: 4px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+
+        <h1>Multiplication Table</h1>
+
+        <input type="number" id="num" placeholder="Enter a number">
+
+        <br>
+
+        <button onclick="showTable()">
+            Show Table
+        </button>
+
+        <div id="result"></div>
+
+    </div>
+
+    <script>
+
+        function showTable() {
+
+            let num = Number(
+                document.getElementById("num").value
+            );
+
+            let resultDiv = document.getElementById("result");
+
+            resultDiv.innerHTML = "";
+
+            if (document.getElementById("num").value === "" || isNaN(num)) {
+                resultDiv.innerHTML = "<p>Please enter a valid number.</p>";
+                return;
+            }
+
+            for (let i = 10; i >= 1; i--) {
+                resultDiv.innerHTML +=
+                    "<p>" + num + " x " + i + " = " + (num * i) + "</p>";
+            }
+        }
+
+    </script>
+
+</body>
+</html>

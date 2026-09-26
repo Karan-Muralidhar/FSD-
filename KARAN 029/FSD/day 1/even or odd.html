@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EVEN OR ODD</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+        }
+
+        .box {
+            width: 400px;
+            margin: 50px auto;
+            padding: 30px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        input {
+            padding: 10px;
+            width: 200px;
+        }
+
+        button {
+            padding: 10px 25px;
+            margin-top: 15px;
+        }
+
+        #result {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+
+        <h1>EVEN OR ODD</h1>
+
+        <input type="number" id="marks"
+               placeholder="ENTER NUMBER">
+
+        <br>
+
+        <button onclick="checkEvenOrOdd()">
+            Check EVEN OR ODD
+        </button>
+
+        <p id="result"></p>
+
+    </div>
+
+    <script>
+
+    function checkEvenOrOdd() {
+        let number = Number(document.getElementById("marks").value);
+        let result;
+
+        if (number % 2 === 0) {
+            result = "EVEN";
+        } else {
+            result = "ODD";
+        }
+
+        document.getElementById("result").innerHTML = "The number is: " + result;
+    }
+
+</script>
